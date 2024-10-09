@@ -26,9 +26,11 @@ fun mutableReference(a: Int): Int {
     return a
 }
 
-fun mutableArray(str: String) {
+fun mutableArray(str: String): ArrayList<String> {
     val LANG = arrayListOf("Array")
     LANG.add("Kotlin")
+    LANG.add("FP")
+    return LANG
     /// ArrayyList<T>
 }
 
@@ -64,19 +66,23 @@ fun mutableNameF(str: Array<String>): String
 class Person(val name: String)
 
 // We call the constructor without the new keyword 
-val person = Person("Seba")
+fun inmutableProperty(p: Person): String = p.name
+
+//fun inmutableJSONList()
 
 fun main(args: Array<String>) {
     
     println(max(1 ,2))
-    println(max_f(1, 2))
+    println(maxF(1, 2))
     
     println(inmutableReference(42))
     println(mutableReference(42))
-    println(mutableArray)
-    println(mutableName)
-    println(mutableNameF)
-
+    println(mutableArray("foo"))
+    println(mutableName(arrayOf("mategirl", "matechick", "matebabe", "matewife")))
+    println(mutableNameF(arrayOf("Banana", "manzana", "maracuya")))
+    
+    println(inmutableProperty(Person("Sebas")))
+    
     println("Hello, world!")
 }
 
